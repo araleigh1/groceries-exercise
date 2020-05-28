@@ -63,7 +63,11 @@ for d in unique_departments:
     
     matching_products = [p for p in products if p["department"] == d]
     matching_products_count = len(matching_products)
-    print(d.title() + " (" + str(matching_products_count) + " Products)")
+    if matching_products_count > 1:
+        label = ("Products")
+    else:
+        label = ("Product")
+    print(str("+ ") +d.title() + " (" + str(matching_products_count) + " " + label + ")")
 
 #def teams_from(city):
   #return [team for team in teams if team["city"] == city]
